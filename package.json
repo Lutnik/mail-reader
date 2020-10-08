@@ -1,0 +1,22 @@
+{
+  "name": "mail-reader",
+  "version": "0.0.1",
+  "description": "A Node.js app to connect and read specific emails on a specific schedule",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "node-inspect app.js"
+  },
+  "author": "Lutnik",
+  "license": "ISC",
+  "dependencies": {
+    "imapflow": "latest",
+    "nodemailer": "^6.4.13",
+    "quoted-printable": "^1.0.1",
+    "utf8": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0"
+  }
+}
