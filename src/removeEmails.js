@@ -6,9 +6,9 @@ module.exports = async () => {
   const logger = new Logger("logs");
 
   try {
+    await mailer.connect();
     lock = await mailer.getMailboxLock("Inbox");
     await mailer.messageDelete("1:*");
-    //console.log("We will be removing all emails here");
     return true;
   } catch (err) {
     logger.error(err);

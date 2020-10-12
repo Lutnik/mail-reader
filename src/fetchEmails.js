@@ -17,7 +17,7 @@ module.exports = async () => {
     const today = new Date(Date.now());
 
     for await (let mail of mailer.fetch(
-      "1:*", // { sentOn: today }, // "1:*",
+      { sentOn: today },
       {
         envelope: true,
         bodyStructure: true,
@@ -135,6 +135,7 @@ module.exports = async () => {
     return false;
   } finally {
     lock && lock.release();
+    await mailer.logout();
     lock && logger.info("Inbox read successfully");
   }
 };
